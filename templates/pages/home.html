@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %} | Welcome{% endblock %}
+
+{% block content %}
+<section id="showcase">
+  <div class="container text-center">
+    <div class="home-search p-5">
+      <div class="overlay p-5">
+        <h1 class="display-4 mb-4">
+          ML Model
+        </h1>
+        <p class="lead">Classify Placement of any Candidate based on the following parameters!</p>
+        <div class="search">
+          <form action="{% url 'result' %}" method="GET">
+            <!-- Form Row 1 -->
+            <div class="form-row">
+              <div class="col-md-2 mb-3">
+                <label class="sr-only">Gender</label>
+                <select name="gender" class="form-control">
+                  <option selected="true" disabled="disabled">Male/Female</option>
+                  <option value="M">M</option>
+                  <option value="F">F</option>
+                </select>
+              </div>
+              <div class="col-md-2 mb-3">
+                <label class="sr-only">ssc_p</label>                              
+                <input type="text" name="ssc_p" class="form-control" placeholder="Secondary %">
+              </div>
+              <div class="col-md-2 mb-3">
+                <label class="sr-only">hsc_p</label>
+                <input type="text" name="hsc_p" class="form-control" placeholder="High School %">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="sr-only">degree_p</label>
+                <input type="text" name="degree_p" class="form-control" placeholder="Degree %">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="sr-only">etest_p</label>
+                <input type="text" name="etest_p" class="form-control" placeholder="Entrance %">
+              </div>
+              
+            </div>
+            <!-- Form Row 2 -->
+            <div class="form-row">
+              <div class="col-md-3 mb-3">
+                <label class="sr-only">mba_p</label>
+                <input type="text" name="mba_p" class="form-control" placeholder="MBA %">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="sr-only">degree_t</label>
+                <select name="degree_t" class="form-control">
+                  <option selected="true" disabled="disabled">Degree Stream</option>
+                  <option value="Sci&Tech">Sci&Tech</option>
+                  <option value="Comm&Mgmt">Comm&Mgmt</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="sr-only">workex</label>
+                <select name="workex" class="form-control">
+                  <option selected="true" disabled="disabled">Work Ex</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="sr-only">specialisation</label>
+                <select name="specialisation" class="form-control">
+                  <option selected="true" disabled="disabled">Specialisation</option>
+                  <option value="Mkt&HR">Mkt&HR</option>
+                  <option value="Mkt&Fin">Mkt&Fin</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-secondary btn-block mt-4" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

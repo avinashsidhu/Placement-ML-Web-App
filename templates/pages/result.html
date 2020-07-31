@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} | Welcome{% endblock %}
+
+{% block content %}
+<section id="about" class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>ML Model Prediction</h2>
+          <p class="lead">The candidatie is {{output}}.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
